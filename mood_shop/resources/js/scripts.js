@@ -67,3 +67,17 @@ function showItems(){
 
     console.log(`Cart Total: $${total}`)
 }
+
+function removeItem(name) {
+    for (let i = 0; i < cart.length; i += 1){
+        if (cart[i].name === name){
+            if (qty > 0) {
+                cart[i].qty -= qty
+            }
+            if (cart[i].qty < 1 || qty === 0){
+                cart.splice(i, 1)
+            }
+            return
+        }
+    }
+}
